@@ -36,12 +36,12 @@
             </nav>
             <div class="header__feedback">
                 <div class="feedback__mail">
-                    <img src="img/icons/mail_icon.png" alt="mail">
+                    <a href="#"><img src="img/icons/mail_icon.png" alt="mail"></a>
                     <a href="#">info@sld-store.ru</a>
                 </div>
                 <div class="feedback__phone">
-                    <img src="img/icons/phone_icon.png" alt="phone">
-                    <div class="feedback_contact">
+                    <a class="feedback__popup" href="#feedback"><img src="img/icons/phone_icon.png" alt="phone"></a>
+                    <div class="feedback__contact">
                         <a class="feedback__popup" href="#feedback">Обратный звонок</a>
                         <p>8 812 615-62-79</p>
                     </div>
@@ -50,17 +50,49 @@
         </div>    
     </header>
 
-    <section class="slider">
+    <section class="slider no-webp webp">
         <div class="content">
             <div class="left-block">
-                <div class="left-block__text">
-                    <p>Оснащение конференц-залов</p>
-                    <h1>Видеоконференции</h1>
-                    <p>Профессиональное оборудование для конференц-залов предназначено для проведения и организации презентаций, совещаний, бизнес-тренингов и онлайн-трансляции контента.</p>
+
+                <div class="left-block__slider">
+                    <div class="left-block__card">
+                        <p>Оснащение конференц-залов</p>
+                        <h1>Видеоконференции</h1>
+                        <p>Профессиональное оборудование для конференц-залов предназначено для проведения и организации презентаций, совещаний, бизнес-тренингов и онлайн-трансляции контента.</p>
+                    </div>  
+                    
+                    <div class="left-block__card">
+                        <p>Оснащение конференц-залов01</p>
+                        <h1>Видеоконференции01</h1>
+                        <p>Простота использования оснащения позволяет решать функциональные и организационные задачи, оптимизировать работу, проводить мероприятия различного масштаба.</p>
+                    </div>
+
+                    <div class="left-block__card">
+                        <p>Оснащение конференц-залов02</p>
+                        <h1>Видеоконференции02</h1>
+                        <p>Применение инновационных решений для демонстрации культурных и исторических реликвий – актуальная тенденция, которая успешно применяется в музеях и на площадках альтернативного искусства.</p>
+                    </div>
+
+                    <div class="left-block__card">
+                        <p>Оснащение конференц-залов03</p>
+                        <h1>Видеоконференции03</h1>
+                        <p>Простота использования оснащения позволяет решать функциональные и организационные задачи, оптимизировать работу, проводить мероприятия различного масштаба.</p>
+                    </div>
+
+                    <div class="left-block__card">
+                        <p>Оснащение конференц-залов04</p>
+                        <h1>Видеоконференции04</h1>
+                        <p>Применение инновационных решений для демонстрации культурных и исторических реликвий – актуальная тенденция, которая успешно применяется в музеях и на площадках альтернативного искусства. </p>
+                    </div>
                 </div>
+
                 <div class="left-block__links">
                     <a class="feedback__popup" href="#feedback">Обратный звонок</a>
                     <a href="#">Заполнить бриф</a>
+                    <div class="swipe">
+                        <p> swipe </p> 
+                        <span></span>
+                    </div>
                 </div>
             </div>
 
@@ -102,10 +134,16 @@
         </div>
         <div class="block__voices">
             <div class="voice__left">
-                <img src="img/voice1.webp" alt="sound">
+                <picture>
+                    <source type="image/webp" srcset="img/voice1.webp">
+                    <img src="img/voice1.jpg" alt="sound">
+                </picture>
             </div>
             <div class="voice__right">
-                <img src="img/voice2.webp" alt="">
+                <picture>
+                    <source type="image/webp" srcset="img/voice2.webp">
+                    <img src="img/voice2.jpg" alt="sound">
+                </picture>
                 <div class="voice__mark">
                     <span></span>
                 </div>
@@ -123,10 +161,10 @@
                         </div>
                         <div class="spec__list">
                             <ul>
-                                <li><img src="img/icons/marker.png" alt=""> Очень мягкое звучание.</li>
-                                <li><img src="img/icons/marker.png" alt="">Чувствительность — 89 дБ.</li>
-                                <li><img src="img/icons/marker.png" alt="">Пиковая мощность — 400 Вт.</li>
-                                <li><img src="img/icons/marker.png" alt="">Степень влагозащищенности IP34.</li>
+                                <li> Очень мягкое звучание.</li>
+                                <li>Чувствительность — 89 дБ.</li>
+                                <li>Пиковая мощность — 400 Вт.</li>
+                                <li>Степень влагозащищенности IP34.</li>
                             </ul>
                         </div>
                     </div>
@@ -138,27 +176,27 @@
     </section>
 
     <section class="popups">
-            <div class="popup__body mfp-hide" id="feedback">
-                <div class="popup__content" >
+            <div class="popup__body mfp-hide" >
+                <div class="popup__content" id="feedback" >
                     <div class="popup__text">
                         <h3>Готовы обсудить проект?</h3>
                         <p>Заполните форму ниже и мы свяжемся с Вами</p>
                     </div>
-                    <div class="popup__data">
-                        <input class="popup__name" type="text" placeholder="Имя*">
-                        <input class="popup__phone" type="text" placeholder="Телефон*">
-                        <div class="popup__checkbox">
-                            <input type="checkbox" id="personal">
-                            <label for="#personal">Я согласен с условиями обработки <a href="">персональных данных</a></label>
+                    <form class="popup__data" action="#" method="get">
+                        <input class="popup__name" name="name" type="text" placeholder="Имя*" tabindex="1">
+                        <input class="popup__phone" name="phone" type="tel" placeholder="Телефон*" tabindex="2">
+                        <div class="popup__checkbox" >
+                            <input type="checkbox" id="personal" tabindex="3">
+                            <label for="personal">Я согласен с условиями обработки <a href="">персональных данных</a></label>
                         </div>
-                        <button class="popup__submit" type="submit"><a class="check__popup" href="#check">Отправить</a></button>
-                    </div> 
+                        <input class="popup__submit" type="submit" tabindex="4" value="Отправить">
+                    </form> 
                 </div>      
             </div>
 
-            <div class="check popup__body mfp-hide" id="check">
-                <div class="popup__content">
-                    <div class="check__content">
+            <div class="check popup__body mfp-hide" >
+                <div class="popup__content" id="check">
+                    <div class="check__content" >
                         <div class="check__icon">
                             <div class="icon">
                                 <img src="img/icons/check.png" alt="check">
