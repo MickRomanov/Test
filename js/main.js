@@ -52,28 +52,88 @@ $(document).ready(function(){
     });
 })
 
+$(document).ready(function(){
+    $('.popup__phone').inputmask({
+        'mask': '+7(999)-999-99-99',
+    });
+})
 
 $(document).ready(function(){
-    $('.popup__data').submit(function(event){
-        event.preventDefault();
+    $('form').validate ({
+        rules: {
+            name: {
+                required: true,
+                minlength: 3,
+            },
+            phone: {
+                required: true,
+            },
+            personal: {
+                required: '#personal:unchecked',
+                
+            },
+            agree: 'required', 
+        },
+        messages: {
+            name: {
+                required: "Поле обязательно для заполнения.",
+                minlength: "Длина имени должна быть не менее {0}-x символов."
+            },
+            phone: {
+                required: "Поле обязательно для заполнения."
+            },
+            personal: {
+                required: "Необходимо Ваше согласие"
+            }
+        },
+        submitHandler: function() {
+            $("form").submit(function() { //Change
+                var th = $(this);
+                $.ajax({
+                    type: "POST",
+                    url: "mail.php", //Change
+                    data: th.serialize()
+                }).done(function() {
+                    $.magnificPopup.open({
+                        items: {
+                            src: '#check',
+                            type: 'inline'
+                        }
+                    });
+                    setTimeout(function() {
+                        // Done Functions
+                        th.trigger("reset");
+                    }, 1000);
+                });
+                return false;
+            });
+
+
+
+
+            // $.ajax({
+            //     type: $(this).attr('method'),
+            //     url: 'ajax/feedback.php',
+            //     data: $(form).serialize(),
+            //     contentType: false,
+            //     cache: false,
+            //     processData: false,
+            //     success: function(){
+            //         $.magnificPopup.open({
+            //             items: {
+            //                 src: '#check',
+            //                 type: 'inline'
+            //             }
+            //         })
+            //     }
+            // });
+            // return false;
+        }
+    });    
+})
+          
+    
 
         
-
-        $.ajax({
-            type: $(this).attr('method'),
-            url: $(this).attr('action'),
-            data: new FormData(this),
-            contentType: false,
-            cache: false,
-            processData: false,
-            success: function(){
-                $.magnificPopup.open({
-                    items: {
-                        src: '#check',
-                        type: 'inline'
-                    }
-                })
-            },
-        });
-    });
-});  
+    
+  
